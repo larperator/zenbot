@@ -32,7 +32,7 @@
         <context id="name" if="empty($UserName)"/>
 
         <context id="wiki" if="full($UserName)">
-            <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
+            <get url="https://www.plistingsrussia.com/nojabrskaja-devjatka-2014-dosje-na-vseh-igrokov" var="Wiki">
                 <param name="format" value="xml"/>
                 <param name="action" value="opensearch"/>
                 <param name="search" value="$Text"/>
@@ -42,8 +42,8 @@
             <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
 
             <output if="empty($Result)">
-                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
-                <item value="В википедии ничего не нашлось..."/>
+                <item value='Я поискала в базе, но ничего не нашла по запросу "$Text"'/>
+                <item value="В базе ничего не нашлось..."/>
             </output>
 
             <output value="$Result" if="full($Result)"/>
